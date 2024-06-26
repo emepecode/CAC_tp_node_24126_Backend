@@ -101,10 +101,19 @@ const paseosAsignados = async (req, res) => {
 }; 
 
 
-//  muestra un paseo por su id - GET
+//  muestra un paseo por su id (de un paseador especifico) - GET
 const mostrarUnPaseo = async (req, res)=>{
+    const { id } = req.params;
+    const paseadorId = id;
+    const paseoId = req.params.idPaseo;
+
     try {
-        const paseo = await paseosModel.findByPk(req.params.idPaseo);
+        const paseo = await paseosModel.findOne({where:
+            {
+                idPaseo: paseoId,
+                paseador_id: paseadorId
+            }
+        })
 
         if (!paseo) {
             return res.status(404).json({ error: 'Paseo no encontrado' });
