@@ -25,7 +25,7 @@ const conexionDb = async ()=>{
         await database.authenticate();
         console.log("conectado ok a la bbdd");
     } catch (error) {
-        console.log(`el error es ${error}`);
+        console.log(`No se pudo conectar a la base de datos: ${error}`);
     }
 } 
 
