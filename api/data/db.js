@@ -1,9 +1,16 @@
-const {Sequelize} = require("sequelize");
+// Importa y configura dotenv
+require("dotenv").config();
 
-const database = new Sequelize("paseadores", "root", "", {
-    host: "localhost", 
+const { Sequelize } = require("sequelize");
+
+const database = new Sequelize(
+    process.env.DB_DATABASE,
+    process.env.DB_USER,
+    {
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
     dialect: "mysql",
-    port: 3307,
-});
+    }
+);
 
 module.exports = database;
