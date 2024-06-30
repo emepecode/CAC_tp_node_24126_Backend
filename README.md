@@ -2,9 +2,9 @@
 
 Nuestro proyecto presenta dos CRUD: uno para el ingreso o registro de usuarios y otro para administrar los paseos ofrecidos por la veterinaria.
 
-1. CRUD USUARIOS
-API Endpoints
-Descripción de los endpoints disponibles en la API:
+1. CRUD USUARIOS  
+API Endpoints  
+Descripción de los endpoints disponibles en la API:  
 
 POST /login-form : Valida datos ingresados (nombre de usuario/mail y contraseña) por el usuario para el inicio de sesión.
 POST /registro-form :  Crea el registro de un nuevo usuario, las claves se guardan encriptadas en la base de datos. (*)
